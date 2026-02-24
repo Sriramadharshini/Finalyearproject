@@ -1,0 +1,32 @@
+const jsonwebtoken = require('jsonwebtoken');
+async function generatePrefToken(user) {
+    try{
+        console.log('Generating pref token for user:', user);
+        const token = jsonwebtoken.sign(
+            {
+                id: user._id,
+                phoneNumber: user.PhoneNumber,
+                email: user.EmailAddress,
+                fullname: user.Fullname
+            },
+            process.env.JWT_SECRET_KEY,
+            // { expiresIn: '2h' }
+        );
+        console.log('Token generated successfully:', token);
+        return {
+            success: true,
+            message: 'Token generated successfully',
+            token,
+        }
+    }catch(error){
+        console.error('Token generation error:', error);
+        return {
+            success: false,
+            message: 'Token generation failed',
+            error: error.message,
+
+        };
+    }
+            }
+
+module.exports = generatePrefToken;

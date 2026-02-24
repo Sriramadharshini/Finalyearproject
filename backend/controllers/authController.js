@@ -1,0 +1,93 @@
+const User = require('../models/user');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const Profile = require('../models/userprofile');
+const user= require('../models/user');
+const auth = require('../middleware/authorization');
+const router = require('express').Router();
+const generatePrefToken  = require('../middleware/preftoken');
+class Authorization {
+
+async register(userData) {
+    try {
+    const existingEmail = await User.findOne({
+        
+        EmailAddress: userData.EmailAddress
+        
+    });
+
+    if (existingEmail) {
+        throw new Error('Email already exists');
+    }
+    const existingPhone = await User.findOne({
+        
+        PhoneNumber: userData.PhoneNumber
+        
+    });
+
+    if (existingPhone) {
+        throw new Error('Phonenumber already exists');
+    }
+
+    const result = await User({
+        Fullname: userData.Fullname,
+        EmailAddress: userData.EmailAddress,
+        PhoneNumber: userData.PhoneNumber,
+        Password: await bcrypt.hash(userData.Password, 10)
+    }).save();
+
+    await Profile({
+        created_by: userData.EmailAddress,
+        personal_information: {
+        Fullname: userData.Fullname,
+        EmailAddress: userData.EmailAddress,
+        PhoneNumber: userData.PhoneNumber
+    }}).save();
+
+    return result;
+
+    } catch (error) {
+    throw new Error(error.message);
+    }
+}
+
+async login(loginData) {
+    try {
+    const user = await User.findOne({
+        EmailAddress: loginData.EmailAddress
+    });
+
+    if (!user) {
+        throw new Error('User not found');
+    }
+    const ispasswordValid = await bcrypt.compare(loginData.Password, user.Password);
+    if(!ispasswordValid){
+        throw new Error('Invalid password');
+    }
+
+    return user ;
+
+    } catch (error) {
+    throw new Error(error.message);
+    }
+}
+
+async logout(req){
+    try{
+        console.log('User Logged out');
+        return{
+        message:'Logout successfully'
+    };
+
+    }catch(error)
+    {
+        console.log('Logout error',error.message);
+        throw error;
+    }
+    }
+}
+module.exports = Authorization;
+
+
+
+

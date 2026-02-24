@@ -1,0 +1,48 @@
+.navbar {
+  background: var(--bg-navbar);
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+  font-family: "Clash Display", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--brand-violet), var(--brand-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links button {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links button:hover {
+  background: linear-gradient(90deg, var(--brand-violet), var(--brand-cyan));
+  color: white;
+  box-shadow: 0 0 20px rgba(124,58,237,0.5);
+}
+.input-modern {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+}
+
+.input-modern:focus {
+  border: 1px solid var(--brand-violet);
+  box-shadow: 0 0 15px rgba(124,58,237,0.5);
+  outline: none;
+}

@@ -1,0 +1,53 @@
+:root {
+
+  /* ========== BRAND GRADIENT ========== */
+  --brand-violet: #7C3AED;
+  --brand-cyan: #06B6D4;
+
+  /* ========== BACKGROUNDS ========== */
+  --bg-main: #020617;
+  --bg-surface: #0F172A;
+  --bg-navbar: #111827;
+  --bg-light: #F8FAFC;
+
+  /* ========== GLASS ========== */
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(124,58,237,0.30);
+
+  /* ========== ACCENTS ========== */
+  --accent-cyan: #22D3EE;
+  --accent-purple: #8B5CF6;
+  --accent-pink: #F472B6;
+
+  /* ========== STATUS ========== */
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --error: #F87171;
+  --info: #38BDF8;
+
+  /* ========== TEXT ========== */
+  --text-primary: #E2E8F0;
+  --text-secondary: #94A3B8;
+  --text-disabled: #475569;
+}
+
+/* Global Reset */
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: "Satoshi", "Inter", sans-serif;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: "Clash Display", "Satoshi", sans-serif;
+  font-weight: 600;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Clash Display", sans-serif;
+}

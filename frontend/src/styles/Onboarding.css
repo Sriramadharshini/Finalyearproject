@@ -1,0 +1,110 @@
+.onboarding-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: 'Poppins', sans-serif;
+}
+
+.onboarding-container {
+  width: 900px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-bottom: 60px;
+  font-size: 16px;
+}
+
+.option-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.option-card {
+  width: 320px;
+  padding: 50px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  text-align: center;
+}
+
+.glass {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+.option-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(99,102,241,0.15);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.option-card h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.option-card p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .option-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .onboarding-container {
+    width: 90%;
+  }
+}
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 40px rgba(124,58,237,0.2);
+}
+.input-modern {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+}
+
+.input-modern:focus {
+  border: 1px solid var(--brand-violet);
+  box-shadow: 0 0 15px rgba(124,58,237,0.5);
+  outline: none;
+}

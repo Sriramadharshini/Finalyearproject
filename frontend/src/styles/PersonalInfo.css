@@ -1,0 +1,271 @@
+/* ===============================
+   🌟 Premium Dashboard UI
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #f1f5f9, #eef2ff);
+}
+
+/* ===============================
+   🚀 Sidebar
+================================ */
+
+.dashboard-sidebar {
+  width: 290px;
+  padding: 40px 25px;
+  background: linear-gradient(180deg, #0f172a, #111827);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-sidebar h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 35px;
+}
+
+/* Sidebar Items */
+.dashboard-sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 30px 10px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar li:hover {
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  transform: translateX(8px);
+  box-shadow: 0 10px 30px rgba(124,58,237,0.3);
+}
+
+/* ===============================
+   📄 Content Area
+================================ */
+
+.dashboard-content {
+  flex: 1;
+  padding: 80px;
+}
+
+/* ===============================
+   🧊 Section Card
+================================ */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.section-card {
+  background: white;
+  padding: 50px;
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 35px;   /* 🔥 Equal vertical spacing */
+}
+.section-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;      /* remove uneven margin */
+}
+
+.section-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 50px 120px rgba(124,58,237,0.15);
+}
+
+/* Section Title */
+.section-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;      /* remove uneven margin */
+}
+
+/* ===============================
+   🧾 Grid Layout
+================================ */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;   /* equal horizontal + vertical gap */
+}
+
+
+/* ===============================
+   ✨ Inputs
+================================ */
+
+.section-card input,
+.section-card textarea,
+.section-card select {
+  width: 100%;
+  height: 52px;           /* 🔥 Fixed equal height */
+  padding: 0 18px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  font-size: 15px;
+  background: #f9fafb;
+  box-sizing: border-box;
+}
+
+/* Textarea separate height */
+.section-card textarea {
+  height: 120px;   /* consistent textarea height */
+  padding: 16px 18px;
+  resize: none;
+}
+
+.section-card textarea {
+  min-height: 120px;
+}
+
+.section-card input:focus,
+.section-card textarea:focus,
+.section-card select:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.15);
+  outline: none;
+  background: white;
+}
+
+/* ===============================
+   📂 Creative Project Cards
+================================ */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;   /* equal spacing inside */
+  padding: 30px;
+  border-radius: 20px;
+  background: #f8fafc;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 8px;
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+}
+
+.project-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 30px 80px rgba(124,58,237,0.25);
+}
+
+/* ===============================
+   ➕ Add Button
+================================ */
+
+.add-btn {
+  padding: 16px 35px;
+  border-radius: 22px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  color: white;
+  transition: 0.3s ease;
+}
+
+.add-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(124,58,237,0.3);
+}
+
+/* ===============================
+   🔘 Bottom Navigation Buttons
+================================ */
+
+.button-group {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.button-group button {
+  padding: 16px 40px;
+  border-radius: 22px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  color: white;
+  transition: 0.3s ease;
+}
+
+.button-group button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(124,58,237,0.3);
+}
+
+.button-group button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   ✨ Animation
+================================ */
+
+.fade {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   📱 Responsive
+================================ */
+
+@media (max-width: 900px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+    
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-content {
+    padding: 40px;
+  }
+  .section-card * {
+  margin: 0;
+}
+}
