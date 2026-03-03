@@ -29,7 +29,7 @@
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 1px;
-  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  background: linear-gradient(90deg, #7c3aed, #06b6d4, #5bcf09);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 35px;
@@ -268,4 +268,32 @@
   .section-card * {
   margin: 0;
 }
+
+.profile-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
 }
+
+.profile-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #7c3aed;
+  background-color: #f3f3f3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}}

@@ -45,8 +45,8 @@ router.post('/create', authorization, async (req, res) => {
         field: formData.field,
         graduationYear: formData.graduationYear,
         cgpa: formData.cgpa,
-        plusTwo: formData.plusTwo,
-        tenth: formData.tenth,
+        startYear:formData.startYear,
+        endYear:formData.endYear,
         studyMode: formData.studyMode
       },
       skills: {
@@ -66,16 +66,13 @@ router.post('/create', authorization, async (req, res) => {
       })),
       certifications: {
         certName: formData.certName,
-        certOrg: formData.certOrg,
-        certYear: formData.certYear,
-        certLink: formData.certLink
+        monthYear: formData.certMonthYear
       },
       achievements: {
-        hackathons: formData.hackathons,
-        leadership: formData.leadership,
-        extraCurricular: formData.extraCurricular
+        yourAchievements: formData.yourAchievements
       },
       professional: {
+        RoleCategory: formData.roleCategory,
         summary: formData.summary,
         careerObjective: formData.careerObjective
       }
@@ -95,6 +92,44 @@ router.post('/create', authorization, async (req, res) => {
       error: "Internal server error",
       error_details: error.message
     });
+  }
+});
+
+router.get("/me", authorization, async (req, res) => {
+  console.log("Logged User ID:", req.userId);
+
+  const profile = await Profile.findOne({ user: req.userId });
+
+  console.log("Found Profile:", profile);
+
+  if (!profile) {
+    return res.status(404).json({ message: "Profile not found" });
+  }
+
+  res.json(profile);
+});
+
+router.put("/update", authorization, async (req, res) => {
+  try {
+    const updatedProfile = await Profile.findOneAndUpdate(
+      { user: req.userId },
+      { $set: req.body },
+      { new: true }
+    );
+
+    res.json(updatedProfile);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.post("/delete", authorization, async (req, res) => 
+{
+  try {
+    await Profile.findOneAndDelete({ user: req.userId });
+    res.json({ message: "Profile deleted" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 

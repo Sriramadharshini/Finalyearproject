@@ -7,20 +7,20 @@ const morgan = require('morgan');
 
 const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
+const aiResumeRoutes = require('./routes/airesumeRoutes');
 
 const app = express();
 
-// 🔥 Middleware first
+
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//  Then routes
 app.use('/api/auth', authRoutes);
 app.use('/api/profile', profileRoutes);
+app.use('/api/ai', aiResumeRoutes);
 
-// Test
 app.get('/', (req,res)=>{ res.send("API running"); });
 
 const PORT = process.env.PORT || 5000;

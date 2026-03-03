@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRobot } from "react-icons/fa";
-import "../styles/Register.css"; // same style as register
+import "../styles/Register.css"; 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -64,7 +64,7 @@ function Login() {
 
       // Redirect to PersonalInfo or dashboard
       setTimeout(() => {
-        navigate("/PersonalInfo");
+        navigate("/Onboarding");
       }, 2000);
 
     } catch (error) {

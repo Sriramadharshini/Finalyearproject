@@ -19,7 +19,7 @@ function Onboarding() {
           {/* Create Profile */}
           <div
             className="option-card glass"
-            onClick={() => navigate("/personal-info")}
+            onClick={() => navigate("/PersonalInfo")}
           >
             <div className="icon-circle">
               <FaUserEdit size={30} />

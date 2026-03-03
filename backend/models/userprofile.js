@@ -29,8 +29,8 @@ const profileSchema = new mongoose.Schema({
     fieldOfStudy: String,
     graduationYear: String,
     cgpa: String,
-    twelfthPercentage: String,
-    tenthPercentage: String,
+    startyear: String,
+    endyear: String,
     mode: String
   }],
 
@@ -64,20 +64,17 @@ const profileSchema = new mongoose.Schema({
   // ---------------- CERTIFICATIONS ----------------
   certifications: [{
     name: String,
-    organization: String,
-    year: String,
-    link: String
+    monthYear: String
   }],
 
   // ---------------- ACHIEVEMENTS ----------------
   achievements: [{
-    hackathons: String,
-    leadership: String,
-    extracurricular: String
+    yourAchievements:String,
   }],
 
   // ---------------- PROFESSIONAL ----------------
   professional: {
+    RoleCategory: String,
     summary: String,
     careerObjective: String
   }

@@ -11,6 +11,7 @@ const token = authHeader && authHeader.split(' ')[1];
         req.fullname=result.fullname;
         req.phonenumber=result.phonenumber;
         next();
+        
     }else{
         res.sendStatus(500).json({message:"Invalid token"});
     }
